@@ -1,0 +1,31 @@
+#include<iostream>
+#include<Windows.h>
+#include<string>
+
+std::string phrase = "Hello";
+
+void typeSlow()
+{
+	int start = 0; // which character wil get printed
+
+	int stringlength = phrase.size(); // used to find how long the for loop should run for
+
+
+	for (int characters = 0; characters < stringlength; characters++) // loops until entire word or phrase is output
+	{
+		std::string subphrase = phrase.substr(start, 1); // updates the subphrase to equal the next character in the string
+		std::cout << subphrase;
+		start++; // moves to the next character
+		Sleep(75);
+	}
+}
+
+int main()
+{
+	while (1 == 1)
+	{
+		typeSlow();
+		std::cout << std::endl;
+		std::getline(std::cin, phrase);
+	}
+}
